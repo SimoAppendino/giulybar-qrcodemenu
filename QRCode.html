@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Menu del Bar</title>
+    <style>
+    /* Aggiungi il CSS per personalizzare l'aspetto del tuo menu */
+    body {
+    
+    font-family: Arial, sans-serif;
+    background-image: url(path_to_background_image.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    }
+    
+    h1 {
+    text-align: center;
+    color: #ffffff; /* Colore del testo */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombra del testo */
+    font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+    text-align: center;
+    }
+    
+    .category {
+    margin-bottom: 10px;
+    }
+    
+    .category h2 {
+    margin-bottom: 5px;
+    }
+    
+    .dish {
+    margin-bottom: 20px;
+    }
+    
+    .dish h3 {
+    margin-bottom: 5px;
+    }
+    
+    .dish img {
+    max-width: 200px;
+    }
+    
+    .dish p {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    }
+    
+    .dish .price {
+    font-weight: bold;
+    }
+    
+    .category-button {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>Menu del Bar</h1>
+    
+    <div class="category" id="caffetteria">
+      <h2>Caffetteria</h2>
+      
+      <div class="dish">
+        <h3>Caffè espresso</h3>
+        <img src="path_to_espresso.jpg" alt="Caffè espresso">
+        <p>Descrizione del caffè espresso.</p>
+        <p class="price">Prezzo: $2.99</p>
+      </div>
+      
+      <div class="dish">
+        <h3>Cappuccino</h3>
+        <img src="path_to_cappuccino.jpg" alt="Cappuccino">
+        <p>Descrizione del cappuccino.</p>
+        <p class="price">Prezzo: $3.49</p>
+      </div>
+      
+      <div class="dish">
+        <h3>Latte Macchiato</h3>
+        <img src="path_to_latte_macchiato.jpg" alt="Latte Macchiato">
+        <p>Descrizione del latte macchiato.</p>
+        <p class="price">Prezzo: $3.99</p>
+      </div>
+      
+      <a href="#caffetteria" class="category-button">Torna su</a>
+    </div>
+    
+    <div class="category" id="bevande">
+      <h2>Bevande</h2>
+      
+      <div class="dish">
+        <h3>Bibita 1</h3>
+        <img src="path_to_beverage1.jpg" alt="Bibita 1">
+        <p>Descrizione della bibita 1.</p>
+        <p class="price">Prezzo: $1.99</p>
+      </div>
+      
+      <div class="dish">
+        <h3>Bibita 2</h3>
+        <img src="path_to_beverage2.jpg" alt="Bibita 2">
+        <p>Descrizione della bibita 2.</p>
+        <p class="price">Prezzo: $1.49</p>
+      </div>
+      
+      <a href="#caffetteria" class="category-button">Vai a Caffetteria</a>
+      <a href="#bevande" class="category-button">Torna su</a>
+    </div>
+  </body>
+</html>
