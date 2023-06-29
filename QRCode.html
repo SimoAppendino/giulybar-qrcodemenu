@@ -327,7 +327,7 @@
       return products;
     }
 
-    function generateHTML(products) {
+function generateHTML(products) {
   var container = document.getElementById('products-container');
 
   for (var section in products) {
@@ -356,7 +356,7 @@
         itFlagImg.className = 'it_flag';
         itFlagImg.alt = 'IT';
         itFlagImg.style.marginRight = '5px';
-        itFlagImg.src = product.image_path_it;
+        itFlagImg.dataset.imagePath = product.image_path_it;
 
         var italianSpan = document.createElement('span');
         italianSpan.textContent = product.italian_name;
@@ -369,7 +369,7 @@
         enFlagImg.className = 'en_flag';
         enFlagImg.alt = 'EN';
         enFlagImg.style.marginRight = '5px';
-        enFlagImg.src = product.image_path_en;
+        enFlagImg.dataset.imagePath = product.image_path_en;
 
         var englishSpan = document.createElement('span');
         englishSpan.textContent = product.name;
@@ -390,6 +390,9 @@
       }
     }
   }
+
+  // Chiama la funzione per caricare le immagini
+  loadImages();
 }
 
     loadCSVFile('products/products.csv');
@@ -421,11 +424,11 @@
     var enFlags = document.querySelectorAll('.en_flag');
 
     itFlags.forEach(function(imgTag) {
-      imgTag.src = folderPath + 'it_flag.png';
+      imgTag.src = imgTag.dataset.imagePath;
     });
 
     enFlags.forEach(function(imgTag) {
-      imgTag.src = folderPath + 'en_flag.png';
+      imgTag.src = imgTag.dataset.imagePath;
     });
   }
 
