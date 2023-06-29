@@ -337,6 +337,7 @@ function generateHTML(products) {
     if (products.hasOwnProperty(section)) {
       var sectionHeader = document.createElement('h2');
       sectionHeader.textContent = section;
+      sectionHeader.id = section.toLowerCase();
       container.appendChild(sectionHeader);
 
       var sectionProducts = products[section];
@@ -430,10 +431,8 @@ function generateHTML(products) {
 
   <script>
     function scrollToSection(sectionId) {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-      }
+      var section = document.getElementById(sectionId);
+      section.scrollIntoView({ behavior: 'smooth' });
     }
   </script>
 
