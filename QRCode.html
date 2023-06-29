@@ -34,7 +34,7 @@
     }
 
     .logo {
-      max-width: 450px;
+      max-width: 500px;
       margin-bottom: 10px;
     }
 
@@ -47,7 +47,7 @@
 
     .category-button {
       margin: 5px;
-      padding: 15px 30px;
+      padding: 25px 40px;
       background-color: #f8f8f8;
       border: none;
       border-radius: 5px;
@@ -69,6 +69,21 @@
       border: 2px solid #000;
       border-radius: 5px;
       pointer-events: none;
+    }
+
+    .category-button {
+      width: 180px;
+      height: 120px;
+      margin: 10px;
+      position: relative;
+    }
+
+    @media (max-width: 480px) {
+      .category-button {
+        width: 100%;
+        height: 80px;
+        margin: 5px;
+      }
     }
 
     .category-button .button-background {
@@ -97,27 +112,32 @@
     }
 
     .category-button.aperitivi .button-background {
-      background-image: url('aperitivi.jpg');
+      background-image: url('images/products/aperitivi.jpeg');
     }
 
     .category-button.bibite .button-background {
-      background-image: url('bibite.jpg');
+      background-image: url('images/products/bibite.jpeg');
     }
 
     .category-button.liquori .button-background {
-      background-image: url('liquori.jpg');
+      background-image: url('images/products/liquori.jpeg');
     }
 
     .category-button.birre .button-background {
-      background-image: url('birre.jpg');
+      background-image: url('images/products/birre.jpeg');
     }
 
     .category-button.vini .button-background {
-      background-image: url('vini.jpg');
+      background-image: url('images/products/vini.jpeg');
     }
 
     .category-button.cibo .button-background {
-      background-image: url('cibo.jpg');
+      background-image: url('images/products/cibo.jpeg');
+    }
+
+    .category-button.cibo {
+      width: 280px;
+      height: 120px;
     }
 
     .category-button:hover {
@@ -134,8 +154,8 @@
       position: fixed;
       bottom: 20px;
       right: 20px;
-      width: 40px;
-      height: 40px;
+      width: 70px;
+      height: 70px;
       background-color: #e0e0e0;
       border-radius: 50%;
       display: flex;
