@@ -339,13 +339,19 @@
           var sectionProducts = products[section];
           for (var i = 0; i < sectionProducts.length; i++) {
             var product = sectionProducts[i];
+
+            // Codifica i valori delle variabili che potrebbero contenere caratteri speciali
+            var encodedItalianName = encodeURIComponent(product.italian_name);
+            var encodedName = encodeURIComponent(product.name);
+            var encodedPrice = encodeURIComponent(product.price);
+
             var html = `
               <div class="product">
                 <p style="display: flex; align-items: center;">
-                  <img class="it_flag" src="${product.image_path_it}" alt="IT" style="margin-right: 5px;">
+                  <img class="it_flag" src="" alt="IT" style="margin-right: 5px;">
                   <span>${product.italian_name}</span>
                   <span style="margin: 0 5px;">/</span>
-                  <img class="en_flag" src="${product.image_path_en}" alt="EN" style="margin-right: 5px;">
+                  <img class="en_flag" src="" alt="EN" style="margin-right: 5px;">
                   <span>${product.name}</span>
                 </p>
                 <h3>${product.price}</h3>
