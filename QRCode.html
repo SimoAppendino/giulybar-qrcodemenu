@@ -387,6 +387,25 @@ function generateHTML(products) {
         productDiv.appendChild(priceHeader);
 
         container.appendChild(productDiv);
+
+          var sectionProducts = products[section];
+          for (var i = 0; i < sectionProducts.length; i++) {
+            var product = sectionProducts[i];
+            var html = `
+              <div class="product">
+                <p style="display: flex; align-items: center;">
+                  <img class="it_flag" src="" alt="IT" style="margin-right: 5px;">
+                  <span>${product.italian_name}</span>
+                  <span style="margin: 0 5px;">/</span>
+                  <img class="en_flag" src="" alt="EN" style="margin-right: 5px;">
+                  <span>${product.name}</span>
+                </p>
+                <h3>${product.price}</h3>
+              </div>
+            `;
+            container.innerHTML += html;
+          }
+        }
       }
     }
   }
@@ -424,11 +443,11 @@ function generateHTML(products) {
     var enFlags = document.querySelectorAll('.en_flag');
 
     itFlags.forEach(function(imgTag) {
-      imgTag.src = imgTag.dataset.imagePath;
+      imgTag.src = folderPath + 'it_flag.png';
     });
 
     enFlags.forEach(function(imgTag) {
-      imgTag.src = imgTag.dataset.imagePath;
+      imgTag.src = folderPath + 'en_flag.png';
     });
   }
 
