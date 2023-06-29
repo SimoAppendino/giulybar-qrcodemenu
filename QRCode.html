@@ -1,115 +1,340 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Menu del Bar</title>
-    <style>
-    /* Aggiungi il CSS per personalizzare l'aspetto del tuo menu */
+<head>
+  <title>Menu del Bar</title>
+  <style>
+
     body {
-    
-    font-family: Arial, sans-serif;
-    background-image: url(path_to_background_image.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    
+      background-image: url('sfondo.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
     }
-    
-    h1 {
-    text-align: center;
-    color: #ffffff; /* Colore del testo */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombra del testo */
-    font-family: Arial, sans-serif;
+
+    .header {
+      padding: 20px;
+      background-color: #f8f8f8;
     }
-    
-    h1 {
-    text-align: center;
+
+    .logo {
+      max-width: 400px;
+      margin-bottom: 10px;
     }
-    
-    .category {
-    margin-bottom: 10px;
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px 0;
     }
-    
-    .category h2 {
-    margin-bottom: 5px;
-    }
-    
-    .dish {
-    margin-bottom: 20px;
-    }
-    
-    .dish h3 {
-    margin-bottom: 5px;
-    }
-    
-    .dish img {
-    max-width: 200px;
-    }
-    
-    .dish p {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    }
-    
-    .dish .price {
-    font-weight: bold;
-    }
-    
+
     .category-button {
-    display: block;
-    text-align: center;
-    margin-top: 10px;
+      margin: 5px;
+      padding: 15px 30px;
+      background-color: #f8f8f8;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
     }
-    </style>
-  </head>
-  <body>
+
+    .category-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 2px solid #000;
+      border-radius: 5px;
+      pointer-events: none;
+    }
+
+    .category-button .button-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 5px;
+      pointer-events: none;
+    }
+
+    .category-button .category-text {
+      margin-left: 10px; /* Aggiunto per spaziare il testo a sinistra dell'immagine */
+    }
+
+    /* Aggiungi stili specifici per ogni categoria */
+    .category-button.caffetteria .button-background {
+      background-image: url('caffetteria.jpg');
+    }
+
+    .category-button.aperitivi .button-background {
+      background-image: url('aperitivi.jpg');
+    }
+
+    .category-button.bibite .button-background {
+      background-image: url('bibite.jpg');
+    }
+
+    .category-button.liquori .button-background {
+      background-image: url('liquori.jpg');
+    }
+
+    .category-button.birre .button-background {
+      background-image: url('birre.jpg');
+    }
+
+    .category-button.vini .button-background {
+      background-image: url('vini.jpg');
+    }
+
+    .category-button.cibo .button-background {
+      background-image: url('cibo.jpg');
+    }
+
+    /* Aggiungi altre classi per le diverse categorie */
+
+    .section {
+      margin: 30px 0;
+    }
+
+    .product {
+      display: flex;
+      flex-direction: column;
+      margin: 10px;
+      padding: 10px;
+      background-color: #f8f8f8;
+      border-radius: 5px;
+      text-align: center; /* Aggiunto per allineare il testo a sinistra */
+      align-items: center;
+    }
+
+    .product p {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product h3 {
+      margin-top: 10px;
+    }
+
+    .product img {
+      max-width: 40px;
+      float: left; /* Aggiunto per posizionare l'immagine a sinistra del testo */
+      margin-right: 10px; /* Aggiunto margine destro per separare l'immagine dal testo */
+    }
+
+  </style>
+
+  <script>
+    function loadImage(className, imagePath) {
+      var imgTag = document.querySelector('.' + className);
+      if (imgTag) {
+        imgTag.src = imagePath;
+      }
+    }
+  </script>
+
+</head>
+<body>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu del Bar</title>
+  <style>
+    /* Stili CSS */
+  </style>
+</head>
+<body>
+  <div id="products-container"></div>
+
+  <script>
+    function loadCSVFile(file) {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200) {
+            var csvData = xhr.responseText;
+            var products = processData(csvData);
+            generateHTML(products);
+          } else {
+            console.error('Errore durante il caricamento del file CSV.');
+          }
+        }
+      };
+      xhr.open('GET', file, true);
+      xhr.send();
+    }
+
+    function processData(csvData) {
+      var lines = csvData.split('\n');
+      var products = {};
+
+      var headers = lines[0].split(',');
+      for (var i = 1; i < lines.length; i++) {
+        var line = lines[i].split(',');
+        if (line.length === headers.length) {
+          var product = {};
+          for (var j = 0; j < headers.length; j++) {
+            product[headers[j]] = line[j];
+          }
+
+          var section = product.section;
+          if (!products[section]) {
+            products[section] = [];
+          }
+
+          products[section].push(product);
+        }
+      }
+
+      return products;
+    }
+
+    function generateHTML(products) {
+      var container = document.getElementById('products-container');
+
+      for (var section in products) {
+        if (products.hasOwnProperty(section)) {
+          var sectionHeader = document.createElement('h2');
+          sectionHeader.textContent = section;
+          container.appendChild(sectionHeader);
+
+          var sectionProducts = products[section];
+          for (var i = 0; i < sectionProducts.length; i++) {
+            var product = sectionProducts[i];
+            var html = `
+              <div class="product">
+                <p style="display: flex; align-items: center;">
+                  <img class="it_flag" src="${product.image_path_it}" alt="IT" style="margin-right: 5px;">
+                  <span>${product.italian_name}</span>
+                  <span style="margin: 0 5px;">/</span>
+                  <img class="en_flag" src="${product.image_path_en}" alt="EN" style="margin-right: 5px;">
+                  <span>${product.name}</span>
+                </p>
+                <h3>${product.price}</h3>
+              </div>
+            `;
+            container.innerHTML += html;
+          }
+        }
+      }
+    }
+
+    loadCSVFile('C:/Users/simon/Documents/GitHub/giulybar-qrcodemenu/products/products.csv');
+  </script>
+</body>
+</html>
+
+  <header class="header">
     <h1>Menu del Bar</h1>
-    
-    <div class="category" id="caffetteria">
-      <h2>Caffetteria</h2>
-      
-      <div class="dish">
-        <h3>Caffè espresso</h3>
-        <img src="path_to_espresso.jpg" alt="Caffè espresso">
-        <p>Descrizione del caffè espresso.</p>
-        <p class="price">Prezzo: $2.99</p>
-      </div>
-      
-      <div class="dish">
-        <h3>Cappuccino</h3>
-        <img src="path_to_cappuccino.jpg" alt="Cappuccino">
-        <p>Descrizione del cappuccino.</p>
-        <p class="price">Prezzo: $3.49</p>
-      </div>
-      
-      <div class="dish">
-        <h3>Latte Macchiato</h3>
-        <img src="path_to_latte_macchiato.jpg" alt="Latte Macchiato">
-        <p>Descrizione del latte macchiato.</p>
-        <p class="price">Prezzo: $3.99</p>
-      </div>
-      
-      <a href="#caffetteria" class="category-button">Torna su</a>
+    <img class="logo" src="C:\Users\simon\Documents\GitHub\giulybar-qrcodemenu\images\logo\logo.png" alt="Logo del Bar">
+  </header>
+
+  <nav class="menu">
+    <button class="category-button caffetteria" onclick="scrollToSection('caffetteria')">
+      <div class="button-background"></div>
+      <div class="category-text">Caffetteria</div>
+    </button>
+    <button class="category-button aperitivi" onclick="scrollToSection('aperitivi')">
+      <div class="button-background"></div>
+      <div class="category-text">Aperitivi</div>
+    </button>
+    <button class="category-button bibite" onclick="scrollToSection('bibite')">
+      <div class="button-background"></div>
+      <div class="category-text">Bibite</div>
+    </button>
+    <button class="category-button liquori" onclick="scrollToSection('liquori')">
+      <div class="button-background"></div>
+      <div class="category-text">Liquori</div>
+    </button>
+    <button class="category-button birre" onclick="scrollToSection('birre')">
+      <div class="button-background"></div>
+      <div class="category-text">Birre</div>
+    </button>
+    <button class="category-button vini" onclick="scrollToSection('vini')">
+      <div class="button-background"></div>
+      <div class="category-text">Vini</div>
+    </button>
+    <button class="category-button cibo" onclick="scrollToSection('cibo')">
+      <div class="button-background"></div>
+      <div class="category-text">Cibo</div>
+    </button>
+    <!-- Aggiungi altri bottoni per le diverse categorie -->
+  </nav>
+
+  <section id="caffetteria" class="section">
+    <h2>Caffetteria</h2>
+    <div class="product">
+      <p style="display: flex; align-items: center;">
+        <img class="it_flag" src="" alt="IT" style="margin-right: 5px;">
+        <span>Caffè</span>
+        <span style="margin: 0 5px;">/</span>
+        <img class="en_flag" src="" alt="EN" style="margin-right: 5px;">
+        <span>Coffee</span>
+      </p>
+      <h3>5.00 €</h3>
     </div>
-    
-    <div class="category" id="bevande">
-      <h2>Bevande</h2>
-      
-      <div class="dish">
-        <h3>Bibita 1</h3>
-        <img src="path_to_beverage1.jpg" alt="Bibita 1">
-        <p>Descrizione della bibita 1.</p>
-        <p class="price">Prezzo: $1.99</p>
-      </div>
-      
-      <div class="dish">
-        <h3>Bibita 2</h3>
-        <img src="path_to_beverage2.jpg" alt="Bibita 2">
-        <p>Descrizione della bibita 2.</p>
-        <p class="price">Prezzo: $1.49</p>
-      </div>
-      
-      <a href="#caffetteria" class="category-button">Vai a Caffetteria</a>
-      <a href="#bevande" class="category-button">Torna su</a>
+    <!-- Altri elementi di Caffetteria -->
+  </section>
+
+  <section id="aperitivi" class="section">
+    <h2>Aperitivi</h2>
+    <div class="product">
+      <p style="display: flex; align-items: center;">
+        <img class="it_flag" src="" alt="IT" style="margin-right: 5px;">
+        <span>Caffè</span>
+        <span style="margin: 0 5px;">/</span>
+        <img class="en_flag" src="" alt="EN" style="margin-right: 5px;">
+        <span>Coffee</span>
+      </p>
+      <h3>5.00 €</h3>
     </div>
-  </body>
+    <!-- Altri elementi di Aperitivi -->
+  </section>
+
+  <!-- Aggiungi altre sezioni per le diverse categorie -->
+
+  <script>
+    function scrollToSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+
+<script>
+  var folderPath = "C:\\Users\\simon\\Documents\\GitHub\\giulybar-qrcodemenu\\images\\flags\\";
+
+  function loadImages() {
+    var itFlags = document.querySelectorAll('.it_flag');
+    var enFlags = document.querySelectorAll('.en_flag');
+
+    itFlags.forEach(function(imgTag) {
+      imgTag.src = folderPath + 'it_flag.png';
+    });
+
+    enFlags.forEach(function(imgTag) {
+      imgTag.src = folderPath + 'en_flag.png';
+    });
+  }
+
+  // Chiama la funzione per caricare le immagini
+  loadImages();
+</script>
+
+</body>
 </html>

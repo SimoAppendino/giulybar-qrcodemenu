@@ -1,0 +1,19 @@
+section;name;italian_name;Image_path_en;image_path_it;price
+Caffetteria;Caffè espresso;Caffè espresso;en_flags.png;it_flags.png;1.00 €
+Caffetteria;Caffè corretto;Caffè corretto;en_flags.png;it_flags.png;2.00 €
+Caffetteria;Caffè decaffeinato;Caffè decaffeinato;en_flags.png;it_flags.png;3.00 €
+Caffetteria;Caffè d'orzo;Caffè d'orzo;en_flags.png;it_flags.png;4.00 €
+Caffetteria;Cappuccino;Cappuccino;en_flags.png;it_flags.png;5.00 €
+Caffetteria;Marocchino;Marocchino;en_flags.png;it_flags.png;1.00 €
+Caffetteria;Cioccolata;Cioccolata;en_flags.png;it_flags.png;1.00 €
+Caffetteria;Punch;Punch;en_flags.png;it_flags.png;1.00 €
+Caffetteria;Caffè shakerato;Caffè shakerato;en_flags.png;it_flags.png;1.00 €
+Caffetteria;Caffè shakerato corretto;Caffè shakerato corretto;en_flags.png;it_flags.png;1.00 €
+Caffetteria;Latte;Latte;en_flags.png;it_flags.png;1.00 €
+Caffetteria;Latte macchiato;Latte macchiato;en_flags.png;it_flags.png;1.00 €
+Caffetteria;Latte e rum;Latte e rum;en_flags.png;it_flags.png;1.00 €
+Caffetteria;Thè caldo;Thè caldo;en_flags.png;it_flags.png;1.00 €
+Caffetteria;Camomilla;Camomilla;en_flags.png;it_flags.png;1.00 €
+Caffetteria;Tisane;Tisane;en_flags.png;it_flags.png;1.00 €
+Caffetteria;Ginseng tazza piccola;Ginseng tazza piccola;en_flags.png;it_flags.png;1.00 €
+Caffetteria;Ginseng tazza grande;Ginseng tazza grande;en_flags.png;it_flags.png;1.00 €
