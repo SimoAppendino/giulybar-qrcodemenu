@@ -12,6 +12,19 @@
       margin: 0;
       padding: 0;
       font-size: 18px;
+      font-family: "Roboto", sans-serif; /* Esempio di specifica del font per tutto il corpo del documento */
+    }
+
+    h1 {
+      font-family: "Roboto", sans-serif; /* Esempio di specifica del font per gli elementi h1 (titolo principale) */
+    }
+
+    h2 {
+      font-family: "Roboto", sans-serif; /* Esempio di specifica del font per gli elementi h1 (titolo principale) */
+    }
+
+    h3 {
+      font-family: "Roboto", sans-serif; /* Esempio di specifica del font per gli elementi h1 (titolo principale) */
     }
 
     .header {
@@ -20,7 +33,7 @@
     }
 
     .logo {
-      max-width: 400px;
+      max-width: 450px;
       margin-bottom: 10px;
     }
 
@@ -42,6 +55,7 @@
       display: flex;
       align-items: center;
       overflow: hidden;
+
     }
 
     .category-button::before {
@@ -71,11 +85,14 @@
 
     .category-button .category-text {
       margin-left: 10px; /* Aggiunto per spaziare il testo a sinistra dell'immagine */
+      margin-top: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
     }
 
     /* Aggiungi stili specifici per ogni categoria */
     .category-button.caffetteria .button-background {
-      background-image: url('caffetteria.jpg');
+      background-image: url('images/products/caffetteria.jpg');
     }
 
     .category-button.aperitivi .button-background {
@@ -102,7 +119,40 @@
       background-image: url('cibo.jpg');
     }
 
+    .category-button:hover {
+      background-color: #e0e0e0; /* Colore di sfondo quando ci passi sopra */
+    }
+
+    .category-button:active {
+      background-color: #c0c0c0; /* Colore di sfondo quando il bottone è cliccato */
+    }
+
     /* Aggiungi altre classi per le diverse categorie */
+
+    #scrollToTopButton {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      background-color: #e0e0e0;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #scrollToTopButton:hover {
+      background-color: #c0c0c0;
+    }
+
+    #scrollToTopButton::before {
+      content: '\25b2'; /* Codice unicode per la freccia verso l'alto */
+      font-size: 24px;
+      color: #ffffff;
+    }
 
     .section {
       margin: 30px 0;
@@ -158,7 +208,80 @@
   </style>
 </head>
 <body>
-  <div id="products-container"></div>
+
+</body>
+</html>
+
+  <header class="header">
+    <h1>Menu del Bar</h1>
+    <img class="logo" src="images/logo/logo.png" alt="Logo del Bar">
+  </header>
+
+  <nav class="menu">
+    <button class="category-button caffetteria" onclick="scrollToSection('caffetteria')">
+      <div class="button-background"></div>
+      <div class="category-text">Caffetteria</div>
+    </button>
+    <button class="category-button aperitivi" onclick="scrollToSection('aperitivi')">
+      <div class="button-background"></div>
+      <div class="category-text">Aperitivi</div>
+    </button>
+    <button class="category-button bibite" onclick="scrollToSection('bibite')">
+      <div class="button-background"></div>
+      <div class="category-text">Bibite</div>
+    </button>
+    <button class="category-button liquori" onclick="scrollToSection('liquori')">
+      <div class="button-background"></div>
+      <div class="category-text">Liquori</div>
+    </button>
+    <button class="category-button birre" onclick="scrollToSection('birre')">
+      <div class="button-background"></div>
+      <div class="category-text">Birre</div>
+    </button>
+    <button class="category-button vini" onclick="scrollToSection('vini')">
+      <div class="button-background"></div>
+      <div class="category-text">Vini</div>
+    </button>
+    <button class="category-button cibo" onclick="scrollToSection('cibo')">
+      <div class="button-background"></div>
+      <div class="category-text">Cibo</div>
+    </button>
+    <!-- Aggiungi altri bottoni per le diverse categorie -->
+  </nav>
+
+ <section id="caffetteria" class="section">
+    <h2>Caffetteria</h2>
+    <div class="product">
+      <p style="display: flex; align-items: center;">
+        <img class="it_flag" src="" alt="IT" style="margin-right: 5px;">
+        <span>Caffè</span>
+        <span style="margin: 0 5px;">/</span>
+        <img class="en_flag" src="" alt="EN" style="margin-right: 5px;">
+        <span>Coffee</span>
+      </p>
+      <h3>5.00 €</h3>
+    </div>
+    <!-- Altri elementi di Caffetteria -->
+  </section>
+
+  <section id="aperitivi" class="section">
+    <h2>Aperitivi</h2>
+    <div class="product">
+      <p style="display: flex; align-items: center;">
+        <img class="it_flag" src="" alt="IT" style="margin-right: 5px;">
+        <span>Caffè</span>
+        <span style="margin: 0 5px;">/</span>
+        <img class="en_flag" src="" alt="EN" style="margin-right: 5px;">
+        <span>Coffee</span>
+      </p>
+      <h3>5.00 €</h3>
+    </div>
+    <!-- Altri elementi di Aperitivi -->
+  </section>
+
+  <!-- Aggiungi altre sezioni per le diverse categorie -->
+
+<div id="products-container"></div>
 
   <script>
     function loadCSVFile(file) {
@@ -235,77 +358,15 @@
 
     loadCSVFile('products/products.csv');
   </script>
-</body>
-</html>
 
-  <header class="header">
-    <h1>Menu del Bar</h1>
-    <img class="logo" src="C:\Users\simon\Documents\GitHub\giulybar-qrcodemenu\images\logo\logo.png" alt="Logo del Bar">
-  </header>
+  <div id="scrollToTopButton"></div>
 
-  <nav class="menu">
-    <button class="category-button caffetteria" onclick="scrollToSection('caffetteria')">
-      <div class="button-background"></div>
-      <div class="category-text">Caffetteria</div>
-    </button>
-    <button class="category-button aperitivi" onclick="scrollToSection('aperitivi')">
-      <div class="button-background"></div>
-      <div class="category-text">Aperitivi</div>
-    </button>
-    <button class="category-button bibite" onclick="scrollToSection('bibite')">
-      <div class="button-background"></div>
-      <div class="category-text">Bibite</div>
-    </button>
-    <button class="category-button liquori" onclick="scrollToSection('liquori')">
-      <div class="button-background"></div>
-      <div class="category-text">Liquori</div>
-    </button>
-    <button class="category-button birre" onclick="scrollToSection('birre')">
-      <div class="button-background"></div>
-      <div class="category-text">Birre</div>
-    </button>
-    <button class="category-button vini" onclick="scrollToSection('vini')">
-      <div class="button-background"></div>
-      <div class="category-text">Vini</div>
-    </button>
-    <button class="category-button cibo" onclick="scrollToSection('cibo')">
-      <div class="button-background"></div>
-      <div class="category-text">Cibo</div>
-    </button>
-    <!-- Aggiungi altri bottoni per le diverse categorie -->
-  </nav>
-
-  <section id="caffetteria" class="section">
-    <h2>Caffetteria</h2>
-    <div class="product">
-      <p style="display: flex; align-items: center;">
-        <img class="it_flag" src="" alt="IT" style="margin-right: 5px;">
-        <span>Caffè</span>
-        <span style="margin: 0 5px;">/</span>
-        <img class="en_flag" src="" alt="EN" style="margin-right: 5px;">
-        <span>Coffee</span>
-      </p>
-      <h3>5.00 €</h3>
-    </div>
-    <!-- Altri elementi di Caffetteria -->
-  </section>
-
-  <section id="aperitivi" class="section">
-    <h2>Aperitivi</h2>
-    <div class="product">
-      <p style="display: flex; align-items: center;">
-        <img class="it_flag" src="" alt="IT" style="margin-right: 5px;">
-        <span>Caffè</span>
-        <span style="margin: 0 5px;">/</span>
-        <img class="en_flag" src="" alt="EN" style="margin-right: 5px;">
-        <span>Coffee</span>
-      </p>
-      <h3>5.00 €</h3>
-    </div>
-    <!-- Altri elementi di Aperitivi -->
-  </section>
-
-  <!-- Aggiungi altre sezioni per le diverse categorie -->
+  <script>
+    var scrollToTopButton = document.getElementById('scrollToTopButton');
+    scrollToTopButton.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 
   <script>
     function scrollToSection(sectionId) {
@@ -317,7 +378,7 @@
   </script>
 
 <script>
-  var folderPath = "C:\\Users\\simon\\Documents\\GitHub\\giulybar-qrcodemenu\\images\\flags\\";
+  var folderPath = "images/flags/";
 
   function loadImages() {
     var itFlags = document.querySelectorAll('.it_flag');
