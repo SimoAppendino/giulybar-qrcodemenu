@@ -328,40 +328,69 @@
     }
 
     function generateHTML(products) {
-      var container = document.getElementById('products-container');
+  var container = document.getElementById('products-container');
 
-      for (var section in products) {
-        if (products.hasOwnProperty(section)) {
-          var sectionHeader = document.createElement('h2');
-          sectionHeader.textContent = section;
-          container.appendChild(sectionHeader);
+  for (var section in products) {
+    if (products.hasOwnProperty(section)) {
+      var sectionHeader = document.createElement('h2');
+      sectionHeader.textContent = section;
+      container.appendChild(sectionHeader);
 
-          var sectionProducts = products[section];
-          for (var i = 0; i < sectionProducts.length; i++) {
-            var product = sectionProducts[i];
+      var sectionProducts = products[section];
+      for (var i = 0; i < sectionProducts.length; i++) {
+        var product = sectionProducts[i];
 
-            // Codifica i valori delle variabili che potrebbero contenere caratteri speciali
-            var encodedItalianName = encodeURIComponent(product.italian_name);
-            var encodedName = encodeURIComponent(product.name);
-            var encodedPrice = encodeURIComponent(product.price);
+        // Codifica i valori delle variabili che potrebbero contenere caratteri speciali
+        var encodedItalianName = encodeURIComponent(product.italian_name);
+        var encodedName = encodeURIComponent(product.name);
+        var encodedPrice = encodeURIComponent(product.price);
 
-            var html = `
-              <div class="product">
-                <p style="display: flex; align-items: center;">
-                  <img class="it_flag" src="" alt="IT" style="margin-right: 5px;">
-                  <span>${product.italian_name}</span>
-                  <span style="margin: 0 5px;">/</span>
-                  <img class="en_flag" src="" alt="EN" style="margin-right: 5px;">
-                  <span>${product.name}</span>
-                </p>
-                <h3>${product.price}</h3>
-              </div>
-            `;
-            container.innerHTML += html;
-          }
-        }
+        var productDiv = document.createElement('div');
+        productDiv.className = 'product';
+
+        var paragraph = document.createElement('p');
+        paragraph.style.display = 'flex';
+        paragraph.style.alignItems = 'center';
+
+        var itFlagImg = document.createElement('img');
+        itFlagImg.className = 'it_flag';
+        itFlagImg.alt = 'IT';
+        itFlagImg.style.marginRight = '5px';
+        itFlagImg.src = product.image_path_it;
+
+        var italianSpan = document.createElement('span');
+        italianSpan.textContent = product.italian_name;
+
+        var slashSpan = document.createElement('span');
+        slashSpan.style.margin = '0 5px';
+        slashSpan.textContent = '/';
+
+        var enFlagImg = document.createElement('img');
+        enFlagImg.className = 'en_flag';
+        enFlagImg.alt = 'EN';
+        enFlagImg.style.marginRight = '5px';
+        enFlagImg.src = product.image_path_en;
+
+        var englishSpan = document.createElement('span');
+        englishSpan.textContent = product.name;
+
+        paragraph.appendChild(itFlagImg);
+        paragraph.appendChild(italianSpan);
+        paragraph.appendChild(slashSpan);
+        paragraph.appendChild(enFlagImg);
+        paragraph.appendChild(englishSpan);
+
+        var priceHeader = document.createElement('h3');
+        priceHeader.textContent = product.price;
+
+        productDiv.appendChild(paragraph);
+        productDiv.appendChild(priceHeader);
+
+        container.appendChild(productDiv);
       }
     }
+  }
+}
 
     loadCSVFile('products/products.csv');
   </script>
