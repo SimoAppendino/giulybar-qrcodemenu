@@ -17,3 +17,111 @@ Caffetteria,Camomilla,Camomilla,1.00 €
 Caffetteria,Tisane,Tisane,1.00 €
 Caffetteria,Ginseng tazza piccola,Ginseng tazza piccola,1.00 €
 Caffetteria,Ginseng tazza grande,Ginseng tazza grande,1.00 €
+Aperitivi,Caffè espresso,Caffè espresso,1.00 €
+Aperitivi,Caffè corretto,Caffè corretto,2.00 €
+Aperitivi,Caffè decaffeinato,Caffè decaffeinato,3.00 €
+Aperitivi,Caffè d'orzo,Caffè d'orzo,4.00 €
+Aperitivi,Cappuccino,Cappuccino,5.00 €
+Aperitivi,Marocchino,Marocchino,1.00 €
+Aperitivi,Cioccolata,Cioccolata,1.00 €
+Aperitivi,Punch,Punch,1.00 €
+Aperitivi,Caffè shakerato,Caffè shakerato,1.00 €
+Aperitivi,Caffè shakerato corretto,Caffè shakerato corretto,1.00 €
+Aperitivi,Latte,Latte,1.00 €
+Aperitivi,Latte macchiato,Latte macchiato,1.00 €
+Aperitivi,Latte e rum,Latte e rum,1.00 €
+Aperitivi,The caldo,Thè caldo,1.00 €
+Aperitivi,Camomilla,Camomilla,1.00 €
+Aperitivi,Tisane,Tisane,1.00 €
+Aperitivi,Ginseng tazza piccola,Ginseng tazza piccola,1.00 €
+Aperitivi,Ginseng tazza grande,Ginseng tazza grande,1.00 €
+Bibite,Caffè espresso,Caffè espresso,1.00 €
+Bibite,Caffè corretto,Caffè corretto,2.00 €
+Bibite,Caffè decaffeinato,Caffè decaffeinato,3.00 €
+Bibite,Caffè d'orzo,Caffè d'orzo,4.00 €
+Bibite,Cappuccino,Cappuccino,5.00 €
+Bibite,Marocchino,Marocchino,1.00 €
+Bibite,Cioccolata,Cioccolata,1.00 €
+Bibite,Punch,Punch,1.00 €
+Bibite,Caffè shakerato,Caffè shakerato,1.00 €
+Bibite,Caffè shakerato corretto,Caffè shakerato corretto,1.00 €
+Bibite,Latte,Latte,1.00 €
+Bibite,Latte macchiato,Latte macchiato,1.00 €
+Bibite,Latte e rum,Latte e rum,1.00 €
+Bibite,The caldo,Thè caldo,1.00 €
+Bibite,Camomilla,Camomilla,1.00 €
+Bibite,Tisane,Tisane,1.00 €
+Bibite,Ginseng tazza piccola,Ginseng tazza piccola,1.00 €
+Bibite,Ginseng tazza grande,Ginseng tazza grande,1.00 €
+Liquori,Caffè espresso,Caffè espresso,1.00 €
+Liquori,Caffè corretto,Caffè corretto,2.00 €
+Liquori,Caffè decaffeinato,Caffè decaffeinato,3.00 €
+Liquori,Caffè d'orzo,Caffè d'orzo,4.00 €
+Liquori,Cappuccino,Cappuccino,5.00 €
+Liquori,Marocchino,Marocchino,1.00 €
+Liquori,Cioccolata,Cioccolata,1.00 €
+Liquori,Punch,Punch,1.00 €
+Liquori,Caffè shakerato,Caffè shakerato,1.00 €
+Liquori,Caffè shakerato corretto,Caffè shakerato corretto,1.00 €
+Liquori,Latte,Latte,1.00 €
+Liquori,Latte macchiato,Latte macchiato,1.00 €
+Liquori,Latte e rum,Latte e rum,1.00 €
+Liquori,The caldo,Thè caldo,1.00 €
+Liquori,Camomilla,Camomilla,1.00 €
+Liquori,Tisane,Tisane,1.00 €
+Liquori,Ginseng tazza piccola,Ginseng tazza piccola,1.00 €
+Liquori,Ginseng tazza grande,Ginseng tazza grande,1.00 €
+Birre,Caffè espresso,Caffè espresso,1.00 €
+Birre,Caffè corretto,Caffè corretto,2.00 €
+Birre,Caffè decaffeinato,Caffè decaffeinato,3.00 €
+Birre,Caffè d'orzo,Caffè d'orzo,4.00 €
+Birre,Cappuccino,Cappuccino,5.00 €
+Birre,Marocchino,Marocchino,1.00 €
+Birre,Cioccolata,Cioccolata,1.00 €
+Birre,Punch,Punch,1.00 €
+Birre,Caffè shakerato,Caffè shakerato,1.00 €
+Birre,Caffè shakerato corretto,Caffè shakerato corretto,1.00 €
+Birre,Latte,Latte,1.00 €
+Birre,Latte macchiato,Latte macchiato,1.00 €
+Birre,Latte e rum,Latte e rum,1.00 €
+Birre,The caldo,Thè caldo,1.00 €
+Birre,Camomilla,Camomilla,1.00 €
+Birre,Tisane,Tisane,1.00 €
+Birre,Ginseng tazza piccola,Ginseng tazza piccola,1.00 €
+Birre,Ginseng tazza grande,Ginseng tazza grande,1.00 €
+Vini,Caffè espresso,Caffè espresso,1.00 €
+Vini,Caffè corretto,Caffè corretto,2.00 €
+Vini,Caffè decaffeinato,Caffè decaffeinato,3.00 €
+Vini,Caffè d'orzo,Caffè d'orzo,4.00 €
+Vini,Cappuccino,Cappuccino,5.00 €
+Vini,Marocchino,Marocchino,1.00 €
+Vini,Cioccolata,Cioccolata,1.00 €
+Vini,Punch,Punch,1.00 €
+Vini,Caffè shakerato,Caffè shakerato,1.00 €
+Vini,Caffè shakerato corretto,Caffè shakerato corretto,1.00 €
+Vini,Latte,Latte,1.00 €
+Vini,Latte macchiato,Latte macchiato,1.00 €
+Vini,Latte e rum,Latte e rum,1.00 €
+Vini,The caldo,Thè caldo,1.00 €
+Vini,Camomilla,Camomilla,1.00 €
+Vini,Tisane,Tisane,1.00 €
+Vini,Ginseng tazza piccola,Ginseng tazza piccola,1.00 €
+Vini,Ginseng tazza grande,Ginseng tazza grande,1.00 €
+Cibo,Caffè espresso,Caffè espresso,1.00 €
+Cibo,Caffè corretto,Caffè corretto,2.00 €
+Cibo,Caffè decaffeinato,Caffè decaffeinato,3.00 €
+Cibo,Caffè d'orzo,Caffè d'orzo,4.00 €
+Cibo,Cappuccino,Cappuccino,5.00 €
+Cibo,Marocchino,Marocchino,1.00 €
+Cibo,Cioccolata,Cioccolata,1.00 €
+Cibo,Punch,Punch,1.00 €
+Cibo,Caffè shakerato,Caffè shakerato,1.00 €
+Cibo,Caffè shakerato corretto,Caffè shakerato corretto,1.00 €
+Cibo,Latte,Latte,1.00 €
+Cibo,Latte macchiato,Latte macchiato,1.00 €
+Cibo,Latte e rum,Latte e rum,1.00 €
+Cibo,The caldo,Thè caldo,1.00 €
+Cibo,Camomilla,Camomilla,1.00 €
+Cibo,Tisane,Tisane,1.00 €
+Cibo,Ginseng tazza piccola,Ginseng tazza piccola,1.00 €
+Cibo,Ginseng tazza grande,Ginseng tazza grande,1.00 €
