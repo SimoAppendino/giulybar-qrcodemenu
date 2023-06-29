@@ -5,6 +5,22 @@
   <style>
 
     body {
+      font-family: "Roboto", sans-serif; /* Esempio di specifica del font per tutto il corpo del documento */
+    }
+
+    h1 {
+      font-family: "Roboto", sans-serif; /* Esempio di specifica del font per gli elementi h1 (titolo principale) */
+    }
+
+    h2 {
+      font-family: "Roboto", sans-serif; /* Esempio di specifica del font per gli elementi h1 (titolo principale) */
+    }
+
+    h3 {
+      font-family: "Roboto", sans-serif; /* Esempio di specifica del font per gli elementi h1 (titolo principale) */
+    }
+
+    body {
       background-image: url('sfondo.jpg');
       background-repeat: no-repeat;
       background-size: cover;
@@ -20,7 +36,7 @@
     }
 
     .logo {
-      max-width: 400px;
+      max-width: 450px;
       margin-bottom: 10px;
     }
 
@@ -33,35 +49,21 @@
 
     .category-button {
       margin: 5px;
-      padding: 15px 30px;
+      padding: 15px 15px;
       background-color: #f8f8f8;
-      border: none;
       border-radius: 5px;
       cursor: pointer;
       position: relative;
-      display: flex;
-      align-items: center;
       overflow: hidden;
     }
 
     .category-button::before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border: 2px solid #000;
-      border-radius: 5px;
-      pointer-events: none;
-    }
-
-    .category-button .button-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      top: 5;
+      left: 5;
+      right: 5;
+      bottom: 5;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -69,13 +71,27 @@
       pointer-events: none;
     }
 
+    .category-button .button-background {
+      position: relative;
+      z-index: 1;
+    }
+
     .category-button .category-text {
-      margin-left: 10px; /* Aggiunto per spaziare il testo a sinistra dell'immagine */
+      position: relative;
+      z-index: 2;
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: center;
     }
 
     /* Aggiungi stili specifici per ogni categoria */
     .category-button.caffetteria .button-background {
       background-image: url('caffetteria.jpg');
+    }
+
+    .category-icon.caffetteria {
+      max-width: 150px;
+      max-height: 150px;
     }
 
     .category-button.aperitivi .button-background {
@@ -246,6 +262,7 @@
   <nav class="menu">
     <button class="category-button caffetteria" onclick="scrollToSection('caffetteria')">
       <div class="button-background"></div>
+        <img class="category-icon caffetteria" src="C:\Users\simon\Documents\GitHub\giulybar-qrcodemenu\images\section\caffetteria.jpg" alt="caffetteria">
       <div class="category-text">Caffetteria</div>
     </button>
     <button class="category-button aperitivi" onclick="scrollToSection('aperitivi')">
