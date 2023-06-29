@@ -7,6 +7,7 @@
   <title>Menu del Bar</title>
   <style>
 
+    /* GESTIONE DEL BODY */
     body {
       background-image: url('images/background/sfondo.jpg');
       background-repeat: repeat;
@@ -32,27 +33,39 @@
       z-index: -1; /* Posiziona l'elemento dietro gli altri contenuti */
     }
 
+    /* GESTIONE LIVELLI */
+
     h1, h2, h3 {
       font-family: "Roboto", sans-serif; /* Esempio di specifica del font per gli elementi h1 (titolo principale) */
     }
 
-
-    /* Media query per dispositivi mobili con larghezza massima di 480px */
+    /* MEDIA QUERY PER DISPOSITIVI MOBILI CON LARGHEZZA MASSIMA DI 480PX */
     @media (max-width: 800px) {
       h2, h3, .category-text, .product span {
         font-size: 26px;
       }
     }
 
+    @media (max-width: 800px) {
+      .category-button {
+        width: 100%;
+        height: 80px;
+        margin: 5px;
+      }
+    }
+
+    /* GESTIONE HEADER */
     .header {
       padding: 20px;
     }
 
+    /* GESTIONE LOGO */
     .logo {
       max-width: 500px;
       margin-bottom: 10px;
     }
 
+    /* GESTIONE DEL MENU */
     .menu {
       display: flex;
       flex-wrap: wrap;
@@ -60,6 +73,11 @@
       margin: 20px 0;
     }
 
+    .menu-instruction {
+      font-weight: bold;
+    }
+
+    /* GESTIONE DEI BOTTONI*/
     .category-button {
       margin: 5px;
       padding: 30px 45px;
@@ -93,14 +111,6 @@
       position: relative;
     }
 
-    @media (max-width: 800px) {
-      .category-button {
-        width: 100%;
-        height: 80px;
-        margin: 5px;
-      }
-    }
-
     .category-button .button-background {
       position: absolute;
       top: 0;
@@ -115,13 +125,12 @@
     }
 
     .category-button .category-text {
-      margin-left: 10px; /* Aggiunto per spaziare il testo a sinistra dell'immagine */
+      margin-left: 10px;
       margin-top: 10px;
       margin-right: 10px;
       margin-bottom: 10px;
     }
 
-    /* Aggiungi stili specifici per ogni categoria */
     .category-button.caffetteria .button-background {
       background-image: url('images/products/caffetteria.jpg');
     }
@@ -165,6 +174,7 @@
 
     /* Aggiungi altre classi per le diverse categorie */
 
+    /* GESTIONE SCROLL TOP */
     #scrollToTopButton {
       position: fixed;
       bottom: 20px;
@@ -190,10 +200,12 @@
       color: #ffffff;
     }
 
+    /* GESTIONE SEZIONI */
     .section {
       margin: 30px 0;
     }
 
+    /* GESTIONE PRODOTTI */
     .product {
       display: flex;
       flex-direction: column;
@@ -223,7 +235,7 @@
 
   </style>
 
-  <script>
+  <script> /* FUNZIONE PER CARICAMENTO IMMAGINI */
     function loadImage(className, imagePath) {
       var imgTag = document.querySelector('.' + className);
       if (imgTag) {
@@ -247,11 +259,15 @@
 
 </body>
 </html>
-
+  
+  <!-- HEADER E LOGO -->
   <header class="header">
     <h1>Menu del Bar</h1>
     <img class="logo" src="images/logo/logo.png" alt="Logo del Bar">
   </header>
+
+  <!-- MENU E BOTTONI -->
+  <p class="menu-instruction">Clicca su una categoria per visualizzare i prodotti corrispondenti:</p>
 
   <nav class="menu">
     <button class="category-button caffetteria" onclick="scrollToSection('caffetteria')">
@@ -403,7 +419,7 @@
     });
   </script>
 
-  <script>
+  <script> /* GESTIONE SCROLL TO SECTION */
     function scrollToSection(sectionId) {
       const section = document.getElementById(sectionId);
       if (section) {
@@ -412,7 +428,7 @@
     }
   </script>
 
-<script>
+<script> /* GESTIONE CARICAMENTO IMMAGINI STATICHE PER TEST */
   var folderPath = "images/flags/";
 
   function loadImages() {
@@ -428,7 +444,6 @@
     });
   }
 
-  // Chiama la funzione per caricare le immagini
   loadImages();
 </script>
 
