@@ -125,13 +125,6 @@
       pointer-events: none;
     }
 
-    .category-button .category-text {
-      margin-left: 10px;
-      margin-top: 10px;
-      margin-right: 10px;
-      margin-bottom: 10px;
-    }
-
     .category-button.caffetteria .button-background {
       background-image: url('images/products/caffetteria.jpg');
     }
@@ -171,6 +164,15 @@
 
     .category-button:active {
       background-color: #c0c0c0; /* Colore di sfondo quando il bottone è cliccato */
+    }
+
+    .category-container {
+      text-align: center;
+    }
+
+    .category-description {
+      font-size: 13px;
+      margin-top: 5px;
     }
 
     /* Aggiungi altre classi per le diverse categorie */
@@ -271,34 +273,48 @@
   <p class="menu-instruction">Clicca su una categoria per visualizzare i prodotti corrispondenti:</p>
 
   <nav class="menu">
-    <button class="category-button caffetteria" onclick="scrollToSection('caffetteria')">
-      <div class="button-background"></div>
-      <div class="category-text">Caffetteria</div>
-    </button>
-    <button class="category-button aperitivi" onclick="scrollToSection('aperitivi')">
-      <div class="button-background"></div>
-      <div class="category-text">Aperitivi</div>
-    </button>
-    <button class="category-button bibite" onclick="scrollToSection('bibite')">
-      <div class="button-background"></div>
-      <div class="category-text">Bibite</div>
-    </button>
-    <button class="category-button liquori" onclick="scrollToSection('liquori')">
-      <div class="button-background"></div>
-      <div class="category-text">Liquori</div>
-    </button>
-    <button class="category-button birre" onclick="scrollToSection('birre')">
-      <div class="button-background"></div>
-      <div class="category-text">Birre</div>
-    </button>
-    <button class="category-button vini" onclick="scrollToSection('vini')">
-      <div class="button-background"></div>
-      <div class="category-text">Vini</div>
-    </button>
-    <button class="category-button cibo" onclick="scrollToSection('cibo')">
-      <div class="button-background"></div>
-      <div class="category-text">Cibo</div>
-    </button>
+    <div class="category-container">
+      <button class="category-button caffetteria" onclick="scrollToSection('caffetteria')">
+        <div class="button-background"></div>
+      </button>
+      <div class="category-description">Caffetteria</div>
+    </div>
+    <div class="category-container">
+      <button class="category-button aperitivi" onclick="scrollToSection('aperitivi')">
+        <div class="button-background"></div>
+      </button>
+      <div class="category-description">Aperitivi</div>
+    </div>
+    <div class="category-container">
+      <button class="category-button bibite" onclick="scrollToSection('bibite')">
+        <div class="button-background"></div>
+      </button>
+      <div class="category-description">Bibite</div>
+    </div>
+    <div class="category-container">
+      <button class="category-button liquori" onclick="scrollToSection('liquori')">
+        <div class="button-background"></div>
+      </button>
+      <div class="category-description">Liquori</div>
+    </div>
+    <div class="category-container">
+      <button class="category-button birre" onclick="scrollToSection('birre')">
+        <div class="button-background"></div>
+      </button>
+      <div class="category-description">Birre</div>
+    </div>
+    <div class="category-container">
+      <button class="category-button vini" onclick="scrollToSection('vini')">
+        <div class="button-background"></div>
+      </button>
+      <div class="category-description">Vini</div>
+    </div>
+    <div class="category-container">
+      <button class="category-button cibo" onclick="scrollToSection('cibo')">
+        <div class="button-background"></div>
+      </button>
+      <div class="category-description">Cibo</div>
+    </div>
     <!-- Aggiungi altri bottoni per le diverse categorie -->
   </nav>
 
