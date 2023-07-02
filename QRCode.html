@@ -212,11 +212,6 @@
     /* GESTIONE PRODOTTI */
     .product {
       display: flex;
-      flex-direction: column;
-      margin: 4px;
-      padding: 4px;
-      border-radius: 5px;
-      text-align: left; /* Aggiunto per allineare il testo a sinistra */
       align-items: center;
     }
 
@@ -231,6 +226,33 @@
       max-width: 40px;
       float: left; /* Aggiunto per posizionare l'immagine a sinistra del testo */
       margin-right: 10px; /* Aggiunto margine destro per separare l'immagine dal testo */
+    }
+
+    .descriptions {
+      display: flex;
+      flex-direction: column;
+      margin-left: 750px; /* Aggiungi uno spazio tra le descrizioni e il prezzo */
+    }
+
+    .descriptions p {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px; /* Riduci lo spazio inferiore tra le descrizioni */
+      margin-top: 10px; /* Riduci lo spazio superiore tra le descrizioni */
+    }
+
+    .descriptions p img {
+      margin-left: 5px;
+    }
+
+    .descriptions span {
+      margin: 0 5px;
+    }
+
+    .price {
+      margin-left: 100px;
+      display: flex;
+      align-items: center;
     }
 
   </style>
@@ -413,16 +435,21 @@ function generateHTML(products) {
           for (var i = 0; i < sectionProducts.length; i++) {
             var product = sectionProducts[i];
             var html = `
-              <div class="product">
-                <p style="display: flex; align-items: center;">
-                  <img class="it_flag" src="" alt="IT" style="margin-right: 5px;">
-                  <span>${product.italian_name}</span>
-                  <span style="margin: 0 5px;">/</span>
-                  <img class="en_flag" src="" alt="EN" style="margin-right: 5px;">
-                  <span>${product.name}</span>
-                  <span style="margin-left: 50px;"><strong>${product.price}</strong></span>
-                </p>
-              </div>
+                <div class="product">
+                  <div class="descriptions">
+                    <p>
+                      <img class="it_flag" src="" alt="IT">
+                      <span>${product.italian_name}</span>
+                    </p>
+                    <p>
+                      <img class="en_flag" src="" alt="EN">
+                      <span>${product.name}</span>
+                    </p>
+                  </div>
+                  <div class="price">
+                    <strong>${product.price}</strong>
+                  </div>
+                </div>
             `;
             container.innerHTML += html;
           }
