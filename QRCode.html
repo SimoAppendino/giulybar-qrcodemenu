@@ -7,263 +7,267 @@
   <title>Menu del Bar</title>
   <style>
 
-    /* GESTIONE DEL BODY */
-    body {
-      background-image: url('images/background/sfondo.jpg');
-      background-repeat: repeat;
-      background-size: cover;
-      background-attachment: scroll;
-      text-align: center;
-      margin: 0;
-      padding: 0;
-      font-size: 36px;
-      font-family: "Roboto", sans-serif;
-      position: relative; /* Aggiunto per creare un contenitore relativo */
-      z-index: 0; /* Imposta lo z-index inferiore per farlo apparire dietro gli altri elementi */
-    }
+  /* GESTIONE DEL BODY */
+  body {
+    background-image: url('images/background/sfondo.jpg');
+    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+    font-family: "Roboto", sans-serif;
+    position: relative; /* Aggiunto per creare un contenitore relativo */
+    z-index: 0; /* Imposta lo z-index inferiore per farlo apparire dietro gli altri elementi */
+  }
 
-    body::before {
-      content: "";
-      position: absolute; /* Posizionamento assoluto all'interno del body */
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(255, 255, 255, 0.75); /* Imposta un colore di sfondo con opacità */
-      z-index: -1; /* Posiziona l'elemento dietro gli altri contenuti */
-    }
+  body::before {
+    content: "";
+    position: absolute; /* Posizionamento assoluto all'interno del body */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.75); /* Imposta un colore di sfondo con opacità */
+    z-index: -1; /* Posiziona l'elemento dietro gli altri contenuti */
+  }
 
-    /* GESTIONE LIVELLI */
+  /* GESTIONE LIVELLI */
+  h1, h2, h3 {
+    font-family: "Roboto", sans-serif; /* Esempio di specifica del font per gli elementi h1 (titolo principale) */
+  }
 
-    h1, h2, h3 {
-      font-family: "Roboto", sans-serif; /* Esempio di specifica del font per gli elementi h1 (titolo principale) */
-    }
-
-    /* MEDIA QUERY PER DISPOSITIVI MOBILI CON LARGHEZZA MASSIMA DI 480PX */
-    @media (max-width: 800px) {
-      h2, .category-text, .product span {
-        font-size: 24px;
-      }
-    }
-
-    @media (max-width: 800px) {
-      .category-button {
-        width: 100%;
-        height: 80px;
-        margin: 5px;
-      }
-    }
-
-    @media (min-width: 768px) {
-      .descriptions {
-        margin-left: 300px; /* Imposta il margine sinistro solo per schermi di larghezza maggiore o uguale a 768px */
-      }
-    }
-
-    /* GESTIONE HEADER */
-    .header {
-      padding: 20px;
-    }
-
-    /* GESTIONE LOGO */
-    .logo {
-      max-width: 950px;
-      margin-bottom: 10px;
-    }
-
-    /* GESTIONE DEL MENU */
-    .menu {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      margin: 20px 0;
-    }
-
-    .menu-instruction {
-      font-weight: bold;
-    }
-
-    /* GESTIONE DEI BOTTONI*/
-    .category-button {
-      margin: 5px;
-      padding: 30px 45px;
-      background-color: #f8f8f8;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      position: relative;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-
-    }
-
-    .category-button::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border: 2px solid #000;
-      border-radius: 5px;
-      pointer-events: none;
-    }
-
-    .category-button {
-      width: 200px;
-      height: 140px;
-      margin: 10px;
-      position: relative;
-    }
-
-    .category-button .button-background {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      border-radius: 5px;
-      pointer-events: none;
-    }
-
-    .category-button.caffetteria .button-background {
-      background-image: url('images/products/caffetteria.jpg');
-    }
-
-    .category-button.aperitivi .button-background {
-      background-image: url('images/products/aperitivi.jpeg');
-    }
-
-    .category-button.bibite .button-background {
-      background-image: url('images/products/bibite.jpeg');
-    }
-
-    .category-button.liquori .button-background {
-      background-image: url('images/products/liquori.jpeg');
-    }
-
-    .category-button.birre .button-background {
-      background-image: url('images/products/birre.jpeg');
-    }
-
-    .category-button.vini .button-background {
-      background-image: url('images/products/vini.jpeg');
-    }
-
-    .category-button.cibo .button-background {
-      background-image: url('images/products/cibo.jpeg');
-    }
-
-    .category-button.cibo {
-      width: 280px;
-      height: 120px;
-    }
-
-    .category-button:hover {
-      background-color: #e0e0e0; /* Colore di sfondo quando ci passi sopra */
-    }
-
-    .category-button:active {
-      background-color: #c0c0c0; /* Colore di sfondo quando il bottone è cliccato */
-    }
-
-    .category-container {
-      text-align: center;
-    }
-
-    .category-description {
-      font-size: 22px;
-      margin-top: 5px;
-      font-weight: bold;
-    }
-
-    /* Aggiungi altre classi per le diverse categorie */
-
-    /* GESTIONE SCROLL TOP */
-    #scrollToTopButton {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 90px;
-      height: 90px;
-      background-color: black;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    #scrollToTopButton:hover {
-      background-color: darkgray;
-    }
-
-    #scrollToTopButton::before {
-      content: '\25b2'; /* Codice unicode per la freccia verso l'alto */
-      font-size: 24px;
-      color: #888888;
-    }
-
-    /* GESTIONE SEZIONI */
-    .section {
-      margin: 30px 0;
-    }
-
-    /* GESTIONE PRODOTTI */
-    .product {
-      display: flex;
-      align-items: center;
-      text-align: left;
-    }
-
-    .product p {
-      display: flex;
-      align-items: center;
-      text-align: left;
-      justify-content: left;
-    }
-
-    .product img {
-      max-width: 40px;
-      float: left; /* Aggiunto per posizionare l'immagine a sinistra del testo */
-      margin-right: 10px; /* Aggiunto margine destro per separare l'immagine dal testo */
-    }
-
+  /* MEDIA QUERY PER DISPOSITIVI MOBILI CON LARGHEZZA MASSIMA DI 800PX */
+  @media (max-width: 800px) {
     .descriptions {
-      display: flex;
-      flex-direction: column;
-      margin-left: 750px; /* Aggiungi uno spazio tra le descrizioni e il prezzo */
+      margin-left: 0; /* Rimuovi il margine sinistro sui dispositivi mobili */
+      text-align: center; /* Centra il testo delle descrizioni su dispositivi mobili */
     }
+  }
 
-    .descriptions p {
-      display: flex;
-      align-items: center;
-      margin-bottom: 10px; /* Riduci lo spazio inferiore tra le descrizioni */
-      margin-top: 10px; /* Riduci lo spazio superiore tra le descrizioni */
+  /* MEDIA QUERY PER DISPOSITIVI MOBILI CON LARGHEZZA MASSIMA DI 480PX */
+  @media (max-width: 480px) {
+    h2, h3, .category-text, .product span {
+      font-size: 26px;
     }
+  }
 
-    .descriptions p img {
-      margin-left: 5px;
-      align-items: center;
+  @media (max-width: 800px) {
+    .category-button {
+      width: 100%;
+      height: 80px;
+      margin: 5px;
     }
+  }
 
-    .descriptions span {
-      margin: 0 5px;
-      align-items: center;
+  @media (min-width: 768px) {
+    .descriptions {
+      margin-left: 300px; /* Imposta il margine sinistro solo per schermi di larghezza maggiore o uguale a 768px */
     }
+  }
 
-    .price {
-      margin-left: 100px;
-      display: flex;
-      align-items: center;
-    }
+  /* GESTIONE HEADER */
+  .header {
+    padding: 20px;
+  }
 
+  /* GESTIONE LOGO */
+  .logo {
+    max-width: 1000px;
+    margin-bottom: 10px;
+  }
+
+  /* GESTIONE DEL MENU */
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  .menu-instruction {
+    font-weight: bold;
+  }
+
+  /* GESTIONE DEI BOTTONI*/
+  .category-button {
+    margin: 5px;
+    padding: 30px 45px;
+    background-color: #f8f8f8;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .category-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #000;
+    border-radius: 5px;
+    pointer-events: none;
+  }
+
+  .category-button {
+    width: 200px;
+    height: 140px;
+    margin: 10px;
+    position: relative;
+  }
+
+  .category-button .button-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 5px;
+    pointer-events: none;
+  }
+
+  .category-button.caffetteria .button-background {
+    background-image: url('images/products/caffetteria.jpg');
+  }
+
+  .category-button.aperitivi .button-background {
+    background-image: url('images/products/aperitivi.jpeg');
+  }
+
+  .category-button.bibite .button-background {
+    background-image: url('images/products/bibite.jpeg');
+  }
+
+  .category-button.liquori .button-background {
+    background-image: url('images/products/liquori.jpeg');
+  }
+
+  .category-button.birre .button-background {
+    background-image: url('images/products/birre.jpeg');
+  }
+
+  .category-button.vini .button-background {
+    background-image: url('images/products/vini.jpeg');
+  }
+
+  .category-button.cibo .button-background {
+    background-image: url('images/products/cibo.jpeg');
+  }
+
+  .category-button.cibo {
+    width: 280px;
+    height: 120px;
+  }
+
+  .category-button:hover {
+    background-color: #e0e0e0; /* Colore di sfondo quando ci passi sopra */
+  }
+
+  .category-button:active {
+    background-color: #c0c0c0; /* Colore di sfondo quando il bottone è cliccato */
+  }
+
+  .category-container {
+    text-align: center;
+  }
+
+  .category-description {
+    font-size: 22px;
+    margin-top: 5px;
+    font-weight: bold;
+  }
+
+  /* Aggiungi altre classi per le diverse categorie */
+
+  /* GESTIONE SCROLL TOP */
+  #scrollToTopButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 90px;
+    height: 90px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  #scrollToTopButton:hover {
+    background-color: darkgray;
+  }
+
+  #scrollToTopButton::before {
+    content: '\25b2'; /* Codice unicode per la freccia verso l'alto */
+    font-size: 24px;
+    color: #888888;
+  }
+
+  /* GESTIONE SEZIONI */
+  .section {
+    margin: 30px 0;
+  }
+
+  /* GESTIONE PRODOTTI */
+  .product {
+    display: flex;
+    align-items: center;
+    text-align: left; /* Aggiunto per allineare il testo a sinistra */
+  }
+
+  .product p {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    justify-content: left;
+  }
+
+  .product img {
+    max-width: 40px;
+    float: left; /* Aggiunto per posizionare l'immagine a sinistra del testo */
+    margin-right: 10px; /* Aggiunto margine destro per separare l'immagine dal testo */
+  }
+
+  .descriptions {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .descriptions p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Riduci lo spazio inferiore tra le descrizioni */
+    margin-top: 10px; /* Riduci lo spazio superiore tra le descrizioni */
+  }
+
+  .descriptions p img {
+    margin-left: 5px;
+    align-items: center;
+  }
+
+  .descriptions span {
+    margin: 0 5px;
+    align-items: center;
+  }
+
+  .price {
+    display: flex;
+    align-items: center;
+  }
+  
   </style>
 
   <script> /* FUNZIONE PER CARICAMENTO IMMAGINI */
