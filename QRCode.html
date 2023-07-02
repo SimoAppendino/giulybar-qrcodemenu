@@ -54,6 +54,12 @@
       }
     }
 
+    @media (min-width: 768px) {
+      .descriptions {
+        margin-left: 300px; /* Imposta il margine sinistro solo per schermi di larghezza maggiore o uguale a 768px */
+      }
+    }
+
     /* GESTIONE HEADER */
     .header {
       padding: 20px;
@@ -213,6 +219,7 @@
     .product {
       display: flex;
       align-items: center;
+      text-align: left;
     }
 
     .product p {
@@ -243,10 +250,12 @@
 
     .descriptions p img {
       margin-left: 5px;
+      align-items: center;
     }
 
     .descriptions span {
       margin: 0 5px;
+      align-items: center;
     }
 
     .price {
@@ -393,12 +402,12 @@ function generateHTML(products) {
           var html = `
               <div class="product">
                 <div class="descriptions">
-                  <p>
-                    <img class="it_flag" src="" alt="IT">
+                  <p style="display: flex; align-items: center;">
+                    <img class="it_flag" src="" alt="IT" style="margin-right: 5px;">
                     <span>${product.italian_name}</span>
                   </p>
                   <p>
-                    <img class="en_flag" src="" alt="EN">
+                    <img class="en_flag" src="" alt="EN" style="margin-right: 5px;">
                     <span>${product.name}</span>
                   </p>
                 </div>
