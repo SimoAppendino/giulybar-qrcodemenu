@@ -7,54 +7,48 @@
   <title>Menu</title>
   <style>
 
-    /* GESTIONE DEL BODY */
-/* GESTIONE DEL BODY */
+  /* GESTIONE DEL BODY */
   body {
     background-image: url('images/background/sfondo.jpg');
     background-repeat: repeat;
     background-size: cover;
     background-attachment: scroll;
     text-align: center;
+    align-items: center;
     margin: 0;
     padding: 0;
     font-size: 36px;
     font-family: "Roboto", sans-serif;
-    position: relative; /* Aggiunto per creare un contenitore relativo */
-    z-index: 0; /* Imposta lo z-index inferiore per farlo apparire dietro gli altri elementi */
+    position: relative;
+    z-index: 0;
   }
 
   body::before {
+    text-align: center;
+    align-items: center;
     content: "";
-    position: absolute; /* Posizionamento assoluto all'interno del body */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.75); /* Imposta un colore di sfondo con opacità */
-    z-index: -1; /* Posiziona l'elemento dietro gli altri contenuti */
+    background-color: rgba(255, 255, 255, 0.75);
+    z-index: -1;
   }
 
   /* GESTIONE LIVELLI */
   h1, h2, h3 {
-    font-family: "Roboto", sans-serif; /* Esempio di specifica del font per gli elementi h1 (titolo principale) */
+    font-family: "Roboto", sans-serif;
   }
 
   /* MEDIA QUERY PER DISPOSITIVI MOBILI CON LARGHEZZA MASSIMA DI 800PX */
   @media (max-width: 800px) {
-    .descriptions {
-      margin-left: 0; /* Rimuovi il margine sinistro sui dispositivi mobili */
-      text-align: center; /* Centra il testo delle descrizioni su dispositivi mobili */
-    }
-  }
-
-  /* MEDIA QUERY PER DISPOSITIVI MOBILI CON LARGHEZZA MASSIMA DI 480PX */
-  @media (max-width: 480px) {
-    h2, h3, .category-text, .product span {
+    .descriptions, h2, .product span {
+      text-align: center;
       font-size: 26px;
+      justify-content: center;
     }
-  }
 
-  @media (max-width: 800px) {
     .category-button {
       width: 100%;
       height: 80px;
@@ -64,7 +58,14 @@
 
   @media (min-width: 768px) {
     .descriptions {
-      margin-left: 300px; /* Imposta il margine sinistro solo per schermi di larghezza maggiore o uguale a 768px */
+      text-align: center;
+      justify-content: center;
+    }
+
+    .category-button {
+      width: 100%;
+      height: 80px;
+      margin: 5px;
     }
   }
 
@@ -104,6 +105,8 @@
     display: flex;
     align-items: center;
     overflow: hidden;
+    width: 200px;
+    height: 140px;
   }
 
   .category-button::before {
@@ -116,13 +119,6 @@
     border: 2px solid #000;
     border-radius: 5px;
     pointer-events: none;
-  }
-
-  .category-button {
-    width: 200px;
-    height: 140px;
-    margin: 10px;
-    position: relative;
   }
 
   .category-button .button-background {
@@ -164,19 +160,16 @@
 
   .category-button.cibo .button-background {
     background-image: url('images/products/cibo.jpeg');
-  }
-
-  .category-button.cibo {
     width: 280px;
     height: 120px;
   }
 
   .category-button:hover {
-    background-color: #e0e0e0; /* Colore di sfondo quando ci passi sopra */
+    background-color: #e0e0e0;
   }
 
   .category-button:active {
-    background-color: #c0c0c0; /* Colore di sfondo quando il bottone è cliccato */
+    background-color: #c0c0c0;
   }
 
   .category-container {
@@ -212,61 +205,77 @@
   }
 
   #scrollToTopButton::before {
-    content: '\25b2'; /* Codice unicode per la freccia verso l'alto */
+    content: '\25b2';
     font-size: 24px;
     color: #888888;
   }
 
   /* GESTIONE SEZIONI */
   .section {
-    margin: 30px 0;
+    margin: 50px 0;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   /* GESTIONE PRODOTTI */
   .product {
     display: flex;
     align-items: center;
-    text-align: left; /* Aggiunto per allineare il testo a sinistra */
+    text-align: left;
+    margin: 30px 0;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed black;
   }
 
   .product p {
     display: flex;
     align-items: center;
-    text-align: left;
+    text-align: center;
     justify-content: left;
   }
 
   .product img {
     max-width: 40px;
-    float: left; /* Aggiunto per posizionare l'immagine a sinistra del testo */
-    margin-right: 10px; /* Aggiunto margine destro per separare l'immagine dal testo */
+    float: left;
+    margin-right: 10px;
+  }
+
+  .product:last-child {
+    border-bottom: none;
   }
 
   .descriptions {
     display: flex;
     flex-direction: column;
+    margin: 30px 0;
   }
 
   .descriptions p {
     display: flex;
     align-items: center;
-    margin-bottom: 10px; /* Riduci lo spazio inferiore tra le descrizioni */
-    margin-top: 10px; /* Riduci lo spazio superiore tra le descrizioni */
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
 
   .descriptions p img {
+    display: flex;
     margin-left: 5px;
     align-items: center;
   }
 
   .descriptions span {
-    margin: 0 5px;
+    margin: 0 10px;
     align-items: center;
   }
 
   .price {
     display: flex;
     align-items: center;
+    margin-left: 50px;
   }
 
   </style>
@@ -342,12 +351,27 @@
     <h2>Caffetteria</h2>
     <div class="product">
       <div class="descriptions">
-        <p style="display: flex; align-items: center;">
-          <img class="it_flag" src="" alt="IT" style="margin-right: 5px;">
+        <p>
+          <img class="it_flag" src="" alt="IT">
           <span>Caffè</span>
         </p>
         <p>
-          <img class="en_flag" src="" alt="EN" style="margin-right: 5px;">
+          <img class="en_flag" src="" alt="EN">
+          <span>Coffee</span>
+        </p>
+      </div>
+      <div class="price">
+        <strong>5.00 €</strong>
+      </div>
+    </div>
+    <div class="product">
+      <div class="descriptions">
+        <p>
+          <img class="it_flag" src="" alt="IT">
+          <span>Caffè</span>
+        </p>
+        <p>
+          <img class="en_flag" src="" alt="EN">
           <span>Coffee</span>
         </p>
       </div>
