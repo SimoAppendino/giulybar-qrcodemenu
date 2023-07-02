@@ -33,7 +33,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(255, 255, 255, 0.85);
     z-index: -1;
   }
 
@@ -402,28 +402,20 @@
       return products;
     }
 
-function generateHTML(products) {
-  var container = document.getElementById('products-container');
+    function generateHTML(products) {
+      var container = document.getElementById('products-container');
 
-  for (var section in products) {
-    if (products.hasOwnProperty(section)) {
-      var sectionHeader = document.createElement('h2');
-      sectionHeader.textContent = section;
-      sectionHeader.id = section.toLowerCase();
-      container.appendChild(sectionHeader);
+      for (var section in products) {
+        if (products.hasOwnProperty(section)) {
+          var sectionHeader = document.createElement('h2');
+          sectionHeader.textContent = section;
+          sectionHeader.id = section.toLowerCase();
+          container.appendChild(sectionHeader);
 
-      var sectionProducts = products[section];
-      for (var i = 0; i < sectionProducts.length; i++) {
-        var product = sectionProducts[i];
-
-        // Codifica i valori delle variabili che potrebbero contenere caratteri speciali
-        var encodedItalianName = encodeURIComponent(product.italian_name);
-        var encodedName = encodeURIComponent(product.name);
-        var encodedPrice = encodeURIComponent(product.price);
-        var sectionProducts = products[section];
-        for (var i = 0; i < sectionProducts.length; i++) {
-          var product = sectionProducts[i];
-          var html = `
+          var sectionProducts = products[section];
+          for (var i = 0; i < sectionProducts.length; i++) {
+            var product = sectionProducts[i];
+            var html = `
               <div class="product">
                 <div class="descriptions">
                   <p>
@@ -439,17 +431,16 @@ function generateHTML(products) {
                   <strong>${product.price}</strong>
                 </div>
               </div>
-          `;
+            `;
             container.innerHTML += html;
           }
         }
       }
+
+      // Chiama la funzione per caricare le immagini
+      loadImages();
     }
 
-  // Chiama la funzione per caricare le immagini
-  loadImages();
-}
-  
     loadCSVFile('products/products.csv');
   </script>
 
