@@ -213,6 +213,32 @@
       font-size: 24px;
       font-weight: bold;
     }
+
+    /* GESTIONE SCROLL TOP */
+    #scrollToTopButton {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 90px;
+      height: 90px;
+      background-color: black;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #scrollToTopButton:hover {
+      background-color: darkgray;
+    }
+
+    #scrollToTopButton::before {
+      content: '\25b2';
+      font-size: 24px;
+      color: #888888;
+    }
   
   </style>
 
